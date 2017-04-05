@@ -49,5 +49,9 @@ bool ceph_heap_set_numeric_property(const char *property, size_t value);
 
 void ceph_heap_profiler_handle_command(const std::vector<std::string> &cmd,
                                        ostream& out);
+// SLB SLB
+void ceph_heap_hooks_init();
+void ceph_new_hook(const void* ptr, size_t size);
+void ceph_delete_hook(const void* ptr);
 
 #endif /* HEAP_PROFILER_H_ */

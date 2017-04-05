@@ -38,11 +38,14 @@ function(add_tracing_library name tracings version)
     INSTALL_RPATH "")
 endfunction()
 
-set(osd_traces oprequest.tp osd.tp pg.tp)
+#slb
+set(osd_traces oprequest.tp osd.tp pg.tp heaphooks.tp)
 add_tracing_library(osd_tp "${osd_traces}" 1.0.0)
 add_tracing_library(rados_tp librados.tp 2.0.0)
 add_tracing_library(rbd_tp librbd.tp 1.0.0)
 add_tracing_library(os_tp objectstore.tp 1.0.0)
+#slb
+add_tracing_library(heaphooks_tp heaphooks.tp 1.0.0)
 
 install(TARGETS rados_tp osd_tp rbd_tp os_tp DESTINATION ${CMAKE_INSTALL_LIBDIR})
 if(WITH_LTTNG AND WITH_EVENTTRACE)
