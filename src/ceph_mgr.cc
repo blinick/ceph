@@ -24,6 +24,8 @@
 
 #include "mgr/MgrStandby.h"
 
+#include "common/TracepointProvider.h"//slb
+#include "perfglue/heap_profiler.h" //slb
 
 /**
  * A short main() which just instantiates a MgrStandby and

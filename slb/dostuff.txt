@@ -1,0 +1,4 @@
+ceph osd pool create cheese 3 3 replicated
+ceph osd pool ls
+rados bench 20 write -b 131072 -p cheese -t 2 --no-cleanup
+rados cleanup -p cheese
